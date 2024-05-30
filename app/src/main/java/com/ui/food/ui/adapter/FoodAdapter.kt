@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.ui.food.R
+import com.ui.food.databinding.ItemViewFoodBinding
 import com.ui.food.model.FoodModel
 import com.ui.food.ui.viewholder.FoodViewHolder
 
@@ -19,9 +20,10 @@ class FoodAdapter : RecyclerView.Adapter<FoodViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FoodViewHolder {
         // view inflation
         // viewholder create
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_view_food, parent, false)
-        return FoodViewHolder(view)
+        val binding = ItemViewFoodBinding.inflate(
+            LayoutInflater.from(parent.context)
+        )
+        return FoodViewHolder(binding)
     }
 
     override fun getItemCount(): Int {
